@@ -5,6 +5,7 @@ fp-info-cache
 *-bak
 *.step
 *.stp
+bom
 
 # fw
 firmware_micropython/micropython-stepper
