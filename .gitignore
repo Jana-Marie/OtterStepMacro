@@ -1,0 +1,13 @@
+# kicad
+*-backups
+gerber
+fp-info-cache
+*-bak
+*.step
+*.stp
+
+# fw
+firmware_micropython/micropython-stepper
+
+# CAD
+*.stl
