@@ -37,6 +37,7 @@
 		(pad_to_mask_clearance 0)
 		(allow_soldermask_bridges_in_footprints no)
 		(tenting front back)
+		(grid_origin 74.8 75)
 		(pcbplotparams
 			(layerselection 0x00000000_00000000_55555555_5755f5ff)
 			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
@@ -23614,6 +23615,266 @@
 		(fill no)
 		(layer "Dwgs.User")
 		(uuid "0ef82a49-0ea7-4c7d-8fbc-0eb47c486585")
+	)
+	(gr_line
+		(start 74.8 75)
+		(end 92.3 75)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Eco1.User")
+		(uuid "1e5f0e78-bff9-460f-9dde-1d81a9bcc23a")
+	)
+	(gr_line
+		(start 82.5 67.5)
+		(end 87.5 67.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Eco1.User")
+		(uuid "2760e652-b2bf-458c-a781-eb306fa73b5d")
+	)
+	(gr_line
+		(start 82.5 62.5)
+		(end 87.5 62.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Eco1.User")
+		(uuid "68024101-5dd7-4b62-827d-b47f2017158b")
+	)
+	(gr_line
+		(start 82.5 47.5)
+		(end 87.5 47.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Eco1.User")
+		(uuid "6a67c716-cecc-434e-b2c1-4c5a5c2888b8")
+	)
+	(gr_line
+		(start 82.5 102.5)
+		(end 87.5 102.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Eco1.User")
+		(uuid "77295471-9e81-4d9b-9c70-c1a4db01400e")
+	)
+	(gr_line
+		(start 82.5 87.5)
+		(end 87.5 87.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Eco1.User")
+		(uuid "97e0af46-7b65-4a88-8ce6-80b4440e0707")
+	)
+	(gr_line
+		(start 82.5 52.5)
+		(end 87.5 52.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Eco1.User")
+		(uuid "a28a4583-11a6-4935-985d-fb635f015ee3")
+	)
+	(gr_line
+		(start 82.5 97.5)
+		(end 87.5 97.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Eco1.User")
+		(uuid "b9341864-7fc5-4e44-891b-2bafc59f8792")
+	)
+	(gr_line
+		(start 82.5 82.5)
+		(end 87.5 82.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Eco1.User")
+		(uuid "bd3fb6ec-b4cb-4725-9d1e-45520684870a")
+	)
+	(gr_line
+		(start 82.5 77.5)
+		(end 87.5 77.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Eco1.User")
+		(uuid "d3c262c9-63fd-4a2a-af4d-2532c31477f2")
+	)
+	(gr_line
+		(start 82.5 57.5)
+		(end 87.5 57.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Eco1.User")
+		(uuid "ef63d840-df2d-410c-ab8c-d5be6268ff28")
+	)
+	(gr_line
+		(start 82.5 92.5)
+		(end 87.5 92.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Eco1.User")
+		(uuid "f2d3d362-e9bd-47a6-8eeb-d388fbf5855b")
+	)
+	(gr_line
+		(start 82.5 72.5)
+		(end 87.5 72.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Eco1.User")
+		(uuid "f4b2d182-c2b4-426f-ad61-846feb8fc41a")
+	)
+	(gr_line
+		(start 85 75)
+		(end 102.5 75)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Eco2.User")
+		(uuid "3e527c71-f22e-4eee-ac39-d8b926c3f6af")
+	)
+	(gr_line
+		(start 85 77.54)
+		(end 90 77.54)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Eco2.User")
+		(uuid "55e6ab18-ad22-49d2-8a7e-0cc8a8016332")
+	)
+	(gr_line
+		(start 85 72.46)
+		(end 90 72.46)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Eco2.User")
+		(uuid "5f36ad08-ffde-467e-8a70-7d8a69333d5a")
+	)
+	(gr_line
+		(start 85 47.06)
+		(end 90 47.06)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Eco2.User")
+		(uuid "6ca31259-1b1f-461b-993b-e400f42cd78f")
+	)
+	(gr_line
+		(start 85 87.7)
+		(end 90 87.7)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Eco2.User")
+		(uuid "6e8467a4-b551-4aea-9a1f-b710602efa21")
+	)
+	(gr_line
+		(start 85 102.94)
+		(end 90 102.94)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Eco2.User")
+		(uuid "84182e3f-6f9a-4976-bfa1-2543835c2bb1")
+	)
+	(gr_line
+		(start 85 97.86)
+		(end 90 97.86)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Eco2.User")
+		(uuid "89dd8b43-625c-4922-b2e4-595972ff049d")
+	)
+	(gr_line
+		(start 85 57.22)
+		(end 90 57.22)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Eco2.User")
+		(uuid "a96dae6d-e60a-46d8-b719-5995b454003c")
+	)
+	(gr_line
+		(start 85 52.14)
+		(end 90 52.14)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Eco2.User")
+		(uuid "a9810732-df83-4ff9-a64f-804888ad5526")
+	)
+	(gr_line
+		(start 85 67.38)
+		(end 90 67.38)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Eco2.User")
+		(uuid "b7efd021-f58b-4a4e-91a9-bbc763bb8c23")
+	)
+	(gr_line
+		(start 85 62.3)
+		(end 90 62.3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Eco2.User")
+		(uuid "bbbc89d2-4d57-45ed-96a3-5ebbb8ced112")
+	)
+	(gr_line
+		(start 85 92.78)
+		(end 90 92.78)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Eco2.User")
+		(uuid "e6d00d27-dbf9-4373-aaba-614ffff5751c")
+	)
+	(gr_line
+		(start 85 82.62)
+		(end 90 82.62)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Eco2.User")
+		(uuid "f03235d9-0611-4e10-910b-9e31189d4435")
 	)
 	(gr_line
 		(start 80.8 46.6)
