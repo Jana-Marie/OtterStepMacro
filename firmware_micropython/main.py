@@ -45,7 +45,7 @@ class webcom(object):
         self.lp2 = lp("Handler")
         self.lp2.print("init done")
         
-        self.lp3 = lp("Handler Command")
+        self.lp3 = lp("HandlerCommand")
         self.lp3.print("init done")
     
     def connect(self):
