@@ -111,16 +111,22 @@ class webcom(object):
                     start = int(cdict['start'])
                     steps = int(cdict['steps'])
                     dps = int(cdict['dps'])
-                    delay = int(cdict['delay'])
+                    delay = float(cdict['delay'])
                     speed = int(cdict['speed'])
                     req = cdict['req']
-                    self.stage.run(start, steps, dps, delay, spd, req)
+                    self.stage.run(start, steps, dps, delay, speed, req)
                 elif cdict["cmd"] == "moveTo":
                     self.lp3.print("move to position ", cdict['pos'])
                     self.stage.moveTo(int(cdict['pos']))
                 elif cdict["cmd"] == "moveRel":
                     self.lp3.print("move relative by ", cdict['pos'])
                     self.stage.moveRel(int(cdict['pos']))
+                elif cdict["cmd"] == "setSpeed":
+                    self.lp3.print("set speed to ", cdict['speed'])
+                    self.stage.setSpeed(int(cdict['speed']))
+                elif cdict["cmd"] == "triggerCamera":
+                    self.lp3.print("camera trigger request sent to ", cdict['req'])
+                    self.stage.doReq(cdict['req'], True)
                 else:
                     self.lp3.print("no command found")
 
@@ -165,6 +171,9 @@ class macroStage(object):
     def run(self, start, steps, dps, delay, spd, req):
         self.lp0.print("running macro scheme")
         self.home()
+        self.lp0.print("setting up socket")
+        addr = socket.getaddrinfo(req, 8081)[0][-1]
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.lp0.print("moving to start pos")
         self.stp.speed(4000)
         self.moveTo(start, True)
@@ -174,7 +183,7 @@ class macroStage(object):
         while steps:
             self.lp0.print(str(steps) + ' steps to go')
             steps = steps - 1
-            self.doReq(req)
+            self.doReq(addr, sock)
             self.moveRel(dps, True)
             time.sleep(delay)
         self.lp0.print("macro scheme done")
@@ -184,12 +193,31 @@ class macroStage(object):
             pass
         return
 
-    def doReq(self, req):
-        self.lac.value(self.lac.value()^1)
+    def doReq(self, req, createSocket=False):
+        self.lac.value(1)
+        if createSocket:
+            addr = socket.getaddrinfo(req, 8081)[0][-1]
+            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+        try:
+            self.lp0.print("trying to trigger camera")
+            sock.connect(addr)
+        except Exception as e:
+            self.lp0.print("trigger excited with " + str(e))
+
+        try:
+            sock.close()
+        except Exception as e:
+            self.lp0.print("could not close connection with " + str(e))
+        self.lac.value(0)
         return
 
     def stop(self):
         self.stp.stop()
+        return
+
+    def setSpeed(self, speed):
+        self.stp.speed(speed)
         return
 
     def moveRel(self, target, blocking=False):
@@ -228,6 +256,10 @@ class macroStage(object):
 
 if __name__ == '__main__':
     # main
+    wc = webcom(SSID, PASSWORD, LED_OK, LED_ACT, TRIG)
+    wc.connect()
+    wc.start_server()
+
     LED_OK.value(1)
 
     while True:
