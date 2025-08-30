@@ -171,9 +171,6 @@ class macroStage(object):
     def run(self, start, steps, dps, delay, spd, req):
         self.lp0.print("running macro scheme")
         self.home()
-        self.lp0.print("setting up socket")
-        addr = socket.getaddrinfo(req, 8081)[0][-1]
-        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.lp0.print("moving to start pos")
         self.stp.speed(4000)
         self.moveTo(start, True)
@@ -183,7 +180,7 @@ class macroStage(object):
         while steps:
             self.lp0.print(str(steps) + ' steps to go')
             steps = steps - 1
-            self.doReq(addr, sock)
+            self.doReq(req, True)
             self.moveRel(dps, True)
             time.sleep(delay)
         self.lp0.print("macro scheme done")
@@ -202,6 +199,7 @@ class macroStage(object):
         try:
             self.lp0.print("trying to trigger camera")
             sock.connect(addr)
+            sock.write('bap')
         except Exception as e:
             self.lp0.print("trigger excited with " + str(e))
 
@@ -218,6 +216,7 @@ class macroStage(object):
 
     def setSpeed(self, speed):
         self.stp.speed(speed)
+        self.lp0.print("new speed is " + str(speed))
         return
 
     def moveRel(self, target, blocking=False):
@@ -225,12 +224,14 @@ class macroStage(object):
         self.stp.target(pos + target)
         if blocking:
             self.blockRun()
+        self.lp0.print("new position is " + str(self.stp.get_pos()))
         return
 
     def moveTo(self, pos, blocking=False):
         self.stp.target(pos)
         if blocking:
             self.blockRun()
+        self.lp0.print("new position is " + str(self.stp.get_pos()))
         return
 
     def home(self):
